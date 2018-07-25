@@ -66,4 +66,49 @@ main div {
 2. line-height的高度等于height的高度。
 ### 多行
 1. 设置相同的padding-top和padding-bottom;
-2. 
+2. 将包含文字的容器设置为table-cell，同时设置verticle-align:center
+3. 使用flexbox，需要子元素个数为1
+
+关于table-cell的居中
+```
+<div class="center-table">
+  <p>I'm vertically centered multiple lines of text in a CSS-created table layout.</p>
+</div>
+```
+```
+.center-table {
+  display: table;
+  height: 250px;
+  background: red;
+  width: 240px;
+  margin: 20px;
+}
+.center-table p {
+  display: table-cell;
+  background: black;
+  color: white;
+  padding: 20px;
+  vertical-align: middle;
+}
+```
+关于flexbox的居中
+```
+<div class="flex-center">
+  <p>I'm vertically centered multiple lines of text in a flexbox container.</p>
+</div>
+```
+```
+.flex-center {
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 200px;
+}
+.flex-center p {
+  margin: 0;
+  padding: 20px;
+}
+```
+
