@@ -71,7 +71,7 @@ main div {
 4. 使用幽灵元素
 需要注意的是，2和3的实现需要父元素具有确定的高度，因此如果父元素高度不确定，则使用4.
 
-关于table-cell的居中
+使用table-cell的居中
 ```
 <div class="center-table">
   <p>I'm vertically centered multiple lines of text in a CSS-created table layout.</p>
@@ -93,7 +93,7 @@ main div {
   vertical-align: middle;
 }
 ```
-关于flexbox的居中
+使用flexbox的居中
 ```
 <div class="flex-center">
   <p>I'm vertically centered multiple lines of text in a flexbox container.</p>
@@ -113,4 +113,56 @@ main div {
   padding: 20px;
 }
 ```
+使用幽灵元素的居中
+```
+<div class="ghost-center">
+  <p>I'm vertically centered multiple lines of text in a container. Centered with a ghost pseudo element</p>
+</div>
+```
+```
+.ghost-center {
+  position: relative;
+}
+.ghost-center::before {
+  content: " ";
+  display: inline-block;
+  height: 100%;
+  width: 1%;
+  vertical-align: middle;
+}
+.ghost-center p {
+  display: inline-block;
+  vertical-align: middle;
+  width: 300px;
+  color:white;
+  padding: 20px;
+  background: black;
+}
+```
+## block元素
+### 高度已知
+父元素使用相对定位，子元素使用绝对定位。
+```
+<main>
+  <div>
+    I'm a block-level element with a fixed height, centered vertically within my parent.
+  </div>
+</main>
+```
+```
+main {
+  background: white;
+  height: 300px;
+  width: 300px;
+  position: relative;
+}
 
+main div {
+  position: absolute;
+  top: 50%;
+  height: 100px;
+  margin-top: -70px;
+  background: gray;
+  padding: 20px;
+}
+```
