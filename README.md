@@ -64,3 +64,6 @@ main div {
 ### 单行
 1. 设置相同的padding-top和padding-bottom；
 2. line-height的高度等于height的高度。
+### 多行
+1. 设置相同的padding-top和padding-bottom;
+2. 
