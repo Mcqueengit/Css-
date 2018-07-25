@@ -68,6 +68,8 @@ main div {
 1. 设置相同的padding-top和padding-bottom;
 2. 将包含文字的容器设置为table-cell，同时设置verticle-align:center
 3. 使用flexbox，需要子元素个数为1
+4. 使用幽灵元素
+需要注意的是，2和3的实现需要父元素具有确定的高度，因此如果父元素高度不确定，则使用4.
 
 关于table-cell的居中
 ```
