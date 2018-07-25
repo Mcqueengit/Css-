@@ -166,3 +166,28 @@ main div {
   padding: 20px;
 }
 ```
+### 高度未知
+```
+<main>
+  <div>
+    I'm a block-level element with a fixed height, centered vertically within my parent.
+  </div>
+</main>
+```
+```
+main {
+  background: white;
+  height: 300px;
+  margin: 20px;
+  width: 300px;
+  position: relative;
+}
+main div {
+  position: absolute;
+  top: 50%;
+  background: gray;
+  padding: 20px;
+  transform: translateY(-50%);
+}
+```
+### 使用flexbox
