@@ -241,3 +241,71 @@ main div {
   padding: 20px;
 }
 ```
+## 宽度和高度未知
+父元素使用position:relative，子元素使用position:absolute;top: 50%; left: 50%，不同的是，需要使用transfrom:translate(-50%,-50%)。使用transfrom有一个缺陷，就是当计算结果含有小数时（比如0.5），会让整个元素看起来是模糊的，一种解决方案就是为父级元素设置transform-style:preserve-3d.
+```
+<main> 
+  <div>
+     I'm a block-level element a fixed height and width, centered vertically within my parent.
+  </div>
+</main>
+```
+```
+main {
+  position: relative;
+  background: white;
+  height: 200px;
+}
+
+main div {
+  background: gray;
+  width: 200px;
+  height: 100px;
+  width: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 20px;
+}
+```
+## 使用flexbox
+```
+<main> 
+  <div>
+     I'm a block-level element a fixed height and width, centered vertically within my parent.
+  </div>
+</main>
+```
+```
+main {
+  position: relative;
+  background: white;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main div {
+  background: gray;
+  width: 200px;
+  height: 100px;
+  padding: 20px;
+}
+```
+## 使用grid
+```
+<span>
+  I'm centered!
+</span>
+```
+```
+body, html {
+  height: 100%;
+  display: grid;
+}
+span {
+  margin: auto;
+}
+```
