@@ -190,4 +190,54 @@ main div {
   transform: translateY(-50%);
 }
 ```
-### 使用flexbox
+### 使用flexbox（和inline-* 多行使用flexbox类似）
+```
+<main>
+  <div>
+    I'm a block-level element with a fixed height, centered vertically within my parent.
+  </div>
+</main>
+```
+```
+main {
+  background: white;
+  height: 300px;
+  width: 200px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+main div {
+  background: gray;
+}
+```
+# 同时水平和垂直居中
+## 宽度和高度已知
+父元素使用position:relative，子元素使用position:absolute;top: 50%; left: 50%，同时使用负向margin实现水平和垂直居中，margin的值为宽高（计算padding）的一半。
+```
+<main> 
+  <div>
+     I'm a block-level element a fixed height and width, centered vertically within my parent.
+  </div>
+</main>
+```
+```
+main {
+  position: relative;
+  background: white;
+  height: 200px;
+}
+
+main div {
+  background: gray;
+  width: 200px;
+  height: 100px;
+  margin: -70px 0 0 -120px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 20px;
+}
+```
